@@ -11,11 +11,12 @@ func initializeRoutes(r *gin.Engine) {
 	// create a router group, kinda like a new instance. Will use instead of r from now on
 	v1 := r.Group("/api/v1")
 	{
-		v1.GET("/opening", handler.ShowOpeningHandler)
-		v1.POST("/opening", handler.CreateOpeningHandler)
-		v1.DELETE("/opening/:id", handler.DeleteOpeningHandler)
-		v1.PUT("/opening", handler.UpdateOpeningHandler)
+		v1.DELETE("/openings/:id", handler.DeleteOpeningHandler)
+		v1.PUT("/openings/:id", handler.UpdateOpeningHandler)
+		v1.GET("/openings/:id", handler.ShowOpeningHandler)
 		v1.GET("/openings", handler.ListOpeningsHandler)
+		v1.POST("/opening", handler.CreateOpeningHandler)
+
 	}
 
 }
