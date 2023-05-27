@@ -8,3 +8,5 @@ notes.md
 
 # Test binary
 *.test
+
+.env
